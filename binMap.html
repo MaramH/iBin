@@ -1,0 +1,76 @@
+<!-- This is the corresponding "starter code" for 07_Markers/Infowindows in Udacity and Google's Maps
+API Course, Lesson 1 -->
+<html>
+ <head>
+
+   <style type="text/css">
+     html, body { height: 100%; margin: 0; padding: 0; }
+     #map { height: 100%; }
+   </style>
+ </head>
+ <body>
+   <div><input id="show" type="button" value="Show Bins"></div>
+   <div id="map"></div>
+   <script type="text/javascript">
+   var markers = [];
+   var map;
+     function initMap() {
+       let bounds = new google.maps.LatLngBounds();
+       map = new google.maps.Map(document.getElementById('map'), {
+         center: {lat: 40.7413549, lng: -73.9980244},
+         zoom: 10,
+         mapTypeControl: false
+       });
+       var locations = [
+         {title: 'Makkah', location: {lat: 21.395366,  lng: 39.857179}},
+         {title: 'Mina', location: {  lat: 21.411931,lng: 39.890682}},
+         {title: 'Muzdalifa', location: {  lat: 21.391694,lng: 39.911861}},
+         {title: 'Muzdalifa2', location: {  lat: 21.392799,lng: 39.908466}},
+         {title: 'Muzdalifa3', location: {  lat: 21.403049,lng: 39.902086}},
+         {title: 'Muzdalifa4', location: {  lat: 21.403289,lng: 39.901174}},
+         {title: 'Muzdalifa5', location: {  lat: 21.404637,lng: 39.901238}},
+         {title: 'Muzdalifa6', location: {  lat: 21.406105,lng: 39.904972}},
+         {title: 'Mina1', location: {  lat: 21.415367,lng: 39.885617}},
+         {title: 'Mina2', location: {  lat:21.414438,lng: 39.888149}},
+         {title: 'Mina3', location: {  lat:21.416306,lng:39.885842}},
+         {title: 'Mina4', location: {  lat:21.411651,lng: 39.883182}},
+         {title: 'Mina5', location: {  lat:21.413279,lng:39.879019}},
+        {title: 'Mina6', location: {  lat:21.410982,lng:39.883075}},
+        {title: 'Mina7', location: {  lat:21.411651,lng:39.883182}},
+        {title: 'Mina8', location: {  lat:21.413949,lng:39.883515}},
+        {title: 'Mina9', location: {  lat:21.415417,lng:39.880725}},
+        {title: 'Mina10', location: { lat:21.417624,lng:39.878858}},
+        {title: 'Mina6', location: {  lat:21.420800,lng:39.882216}},
+        {title: 'Mina6', location: {  lat:21.419278,lng:39.875998}}
+
+       ];
+       for (var i = 0; i < locations.length; i++) {
+         var position = locations[i].location;
+         var title = locations[i].title;
+         var marker = new window.google.maps.Marker({
+          position: position,
+          title: title,
+           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          animation: window.google.maps.Animation.DROP,
+          id:i
+        });
+         marker.setMap(map);
+         bounds.extend(marker.position);
+          map.fitBounds(bounds);
+          markers.push(marker);
+          document.getElementById('show').addEventListener('click', function(){
+          for(var m=0; m<markers.length;m++){
+            markers[m*2].icon = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+            markers[m*3].icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+           markers[m*2].setMap(map);
+            markers[m*3].setMap(map);
+          }
+          });
+       }
+     }
+   </script>
+   <script async defer
+     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDNtwIkwQzpp2TWhU-iTsDSDZhVX626A0c&callback=initMap">
+   </script>
+ </body>
+</html>

@@ -25,6 +25,8 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
@@ -42,19 +44,7 @@
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 
-	<!-- 
-	Default Theme Style 
-	You can change the style.css (default color purple) to one of these styles
-	
-	1. pink.css
-	2. blue.css
-	3. turquoise.css
-	4. orange.css
-	5. lightblue.css
-	6. brown.css
-	7. green.css
 
-	-->
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Styleswitcher ( This style is for demo purposes only, you may delete this anytime. ) -->
@@ -164,6 +154,68 @@
 		text-decoration: none;
 		outline: none;
 	}
+        body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
 	</style>
 	<!-- End demo purposes only -->
 
@@ -177,9 +229,38 @@
 
 	</head>
 	<body>
-     
+
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="binMap.html">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>اسم المستخدم</b></label>
+      <input type="text" placeholder="ادخل اسم المستخدم" name="uname" required>
+
+      <label for="psw"><b>كلمة المرور</b></label>
+      <input type="password" placeholder="ادخل كلمة المرور" name="psw" required>
+        
+      <button type="submit" >تسخيل الدخول</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> تذكرني
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">إلغاء</button>
+      <span class="psw">نسيان <a href="#">كلمة المرور ؟</a></span>
+    </div>
+  </form>
+</div>
 	<header role="banner" id="fh5co-header">
-        <a  class="navbar-brand" href="index.html">iBin</a> 
+        <a  class="navbar-brand" href="index.html">iBin</a> <span onclick="document.getElementById('id01').style.display='block'" style="width:auto;">تسجيل الدخول</span>
 			<div class="container">
                  
 				<!-- <div class="row"> -->
@@ -192,7 +273,6 @@
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav navbar-left">
 		            
-		            <li><a href="#" data-nav-section="contact"><span>تواصل معنا</span></a></li>
 		            <li><a href="#" data-nav-section="about"><span>المنتجات</span></a></li>
 		            <li><a href="#" data-nav-section="services"><span>الخدمات </span></a></li>
                        <li><a href="#" data-nav-section="testimonials"><span>الإحصائيات </span></a></li>
@@ -292,7 +372,37 @@
 			<div class="row">
 				<div class="col-md-12 section-heading text-center to-animate">
 					<h2>الإحصائيات</h2>
+                    <div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i ><img src="images/img_451479.png"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="89" data-speed="5000" data-refresh-interval="50">89</span>
+						<span class="fh5co-counter-label">العملاء</span>
+					</div>
 				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i ><img src="images/36764-200.png"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="2343409" data-speed="5000" data-refresh-interval="50">2343409</span>
+                        <span class="fh5co-counter-label">الأوزان التقديرية</span>
+						
+					</div>
+				</div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+					
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i ><img src="images/images.png"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="1302" data-speed="5000" data-refresh-interval="50">1302</span>
+						<span class="fh5co-counter-label">الشركات</span>
+					</div>
+				</div>
+                
+			</div></div>
+                
 			</div>
 			
 			
@@ -356,43 +466,56 @@
 				</div>
 			</div>
 			<div class="row">
-                <div class="col-md-3">
-					<div class="fh5co-person text-center to-animate">
-						<figure><img src="images/organic-food.png" alt="Image"></figure>
-						<h3> المواد العضوية</h3>
-						
-						<p></p>
-						
-					</div>
-				
-				</div>
-				<div class="col-md-3">
+        
+				<div class="col-md-4">
 					<div class="fh5co-person text-center to-animate">
 						<figure><img src="images/23125-200.png" alt="Image"></figure>
-						<h3>الألومنيوم</h3>
+						<h3>الألومينوم</h3>
 						
-						<p></p>
+									<p><form action="/action_page.php">
+  <input type="radio" name="qunt" value="qunt" checked> ٢٥ طن <br>
+  <input type="radio" name="qunt" value="qunt"> ٣٥ طن <br>
+  <input type="radio" name="qunt" value="qunt">  ٤٥ طن <br><br>
+     <p><a href="#" class="btn btn-primary"onclick="alert('تمت الاضافة!')"> ! اضافة لسلة </a></p>
+
+              
+                    </form>
 						
 					</div>
                     
 				</div>
-                <div class="col-md-3">
+              <div class="col-md-4">
 					<div class="fh5co-person text-center to-animate">
 						<figure><img src="images/85051.png" alt="Image"></figure>
-						<h3>البلاستيك </h3>
+						<h3>البلاستيك</h3>
 						
-						<p></p>
+									<p><form action="/action_page.php">
+  <input type="radio" name="qunt" value="qunt" checked> ٢٥ طن <br>
+  <input type="radio" name="qunt" value="qunt"> ٣٥ طن <br>
+  <input type="radio" name="qunt" value="qunt">  ٤٥ طن <br><br>
+     <p><a href="#" class="btn btn-primary"onclick="alert('تمت الاضافة!')"> ! اضافة لسلة </a></p>
+
+              
+                    </form>
 						
 					</div>
                     
-				
 				</div>
-                <div class="col-md-3">
+                <div class="col-md-4">
 					<div class="fh5co-person text-center to-animate">
 						<figure><img src="images/paper.png" alt="Image"></figure>
 						<h3>الورق </h3>
 						
-						<p></p>
+						<p><form action="/action_page.php">
+  <input type="radio" name="qunt" value="qunt" checked> ٢٥ طن <br>
+  <input type="radio" name="qunt" value="qunt"> ٣٥ طن <br>
+  <input type="radio" name="qunt" value="qunt">  ٤٥ طن <br><br>
+     <p><a href="#" class="btn btn-primary"onclick="alert('تمت الاضافة!')"> ! اضافة لسلة </a></p>
+
+              
+                    </form>
+
+
 						
 					</div>
 			</div>
@@ -401,28 +524,7 @@
 	
 	
 
-	<section id="fh5co-contact" data-section="contact">
-		<div class="container">
-			<div class="row">
-				
-				</div>
-			<div class="row row-bottom-padded-md">
-				<div class="col-md-6 to-animate">
-					<h3>تواصل معنا</h3>
-					<ul class="fh5co-contact-info">
-						<li class="fh5co-contact-address ">
-							<i class="icon-home"></i>
-							هاكثون الحج-جدة-
-						</li>
-						<li><i class="icon-phone"></i> (069) 0509...</li>
-						<li><i class="icon-envelope"></i>info@iBin.sa</li>
-						<li><i class="icon-globe"></i> <a href="http://iBin.sa/" target="_blank">iBin.sa</a></li>
-					</ul>
-				</div></div></div>
 
-				
-	
-	</section>
 	
 	
 	<footer id="footer" role="contentinfo">
@@ -431,6 +533,8 @@
 			<div class="">
 				<div class="col-md-12 text-center">
                     <p>&copy; جميع الحقوق محفوظة - iBin   </p>
+                    <p>www.ibin.sa </p>
+                    
 				</div>
 			</div>
 			<div class="row">
@@ -439,7 +543,9 @@
 						<li><a href="#"><i class="icon-twitter"></i></a></li>
 						<li><a href="#"><i class="icon-facebook"></i></a></li>
 						<li><a href="#"><i class="icon-youtube"></i></a></li>
+                        
 					</ul>
+                    <p> الرقم الموحد ٩٢٠٠٠٠١</p>
 				</div>
 			</div>
 		</div>
@@ -483,7 +589,21 @@
 				$('#colour-variations').toggleClass('sleep');
 			});
 		});
+    
+
 	</script>
+        <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+        
 	<!-- End demo purposes only -->
 
 	<!-- Main JS (Do not remove) -->
